@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.hubu.gh_users_view.mapper.GhChUserQuarterlyMapper" >
+
+  <resultMap id="BaseResultMap" type="edu.hubu.gh_users_view.entity.GhChUserQuarterly" >
+    <result column="code" property="code" jdbcType="INTEGER" />
+    <result column="quarter" property="quarter" jdbcType="VARCHAR" />
+    <result column="total_users" property="totalUsers" jdbcType="INTEGER" />
+  </resultMap>
+
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select code, quarter, total_users
+    from gh_chuser_quarter
+  </select>
+</mapper>

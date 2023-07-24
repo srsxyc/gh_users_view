@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.hubu.gh_users_view.mapper.CountryMapper" >
+
+  <resultMap id="BaseResultMap" type="edu.hubu.gh_users_view.entity.Country" >
+    <id column="country_id" property="countryId" jdbcType="INTEGER" />
+    <result column="EN_name" property="enName" jdbcType="VARCHAR" />
+    <result column="CH_name" property="chName" jdbcType="VARCHAR" />
+    <result column="longitude" property="longitude" jdbcType="DECIMAL" />
+    <result column="latitude" property="latitude" jdbcType="DECIMAL" />
+  </resultMap>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" >
+    select country_id, EN_name, CH_name, longitude, latitude
+    from country where country_id = #{countryId}
+  </select>
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.hubu.gh_users_view.mapper.GhChUserYearMapper" >
+
+  <resultMap id="BaseResultMap" type="edu.hubu.gh_users_view.entity.GhChUserYear" >
+    <result column="code" property="code" jdbcType="INTEGER" />
+    <result column="year" property="year" jdbcType="INTEGER" />
+    <result column="total_users" property="totalUsers" jdbcType="INTEGER" />
+  </resultMap>
+
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select code, year, total_users
+    from gh_chuser_year
+  </select>
+</mapper>
